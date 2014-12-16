@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+		<title>Mia Photography</title>
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		<meta name="author" content="Ping" />	
+		<!-- <link rel="stylesheet" type="text/css" href="css/index.css" /> -->
+		<style>
+	@font-face {
+    font-family: 'walkway_semiboldregular';
+    src: url('css/fonts/Walkway_SemiBold-webfont.eot');
+    src: url('css/fonts/Walkway_SemiBold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('css/fonts/Walkway_SemiBold-webfont.woff') format('woff'),
+         url('css/fonts/Walkway_SemiBold-webfont.ttf') format('truetype'),
+         url('css/fonts/Walkway_SemiBold-webfont.svg#walkway_semiboldregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+	}	
+	@font-face {
+    font-family: 'segoe_printregular';
+    src: url('css/fonts/segoe_print-webfont.eot');
+    src: url('css/fonts/segoe_print-webfont.eot?#iefix') format('embedded-opentype'),
+         url('css/fonts/segoe_print-webfont.woff') format('woff'),
+         url('css/fonts/segoe_print-webfont.ttf') format('truetype'),
+         url('css/fonts/segoe_print-webfont.svg#segoe_printregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+	}
+	@font-face {
+    font-family: 'allerregular';
+    src: url('css/fonts/aller_rg.eot');
+    src: url('css/fonts/aller_rg.eot?#iefix') format('embedded-opentype'),
+         url('css/fonts/aller_rg.woff') format('woff'),
+         url('css/fonts/aller_rg.ttf') format('truetype'),
+         url('css/fonts/aller_rg.svg#allerregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+	}
+	<!-- @font-face{
+	font-family: 'phjrerxgbbxyevsyiqdetwzlvcyRg';
+	src: url('css/fonts/phjrerxgbbxyevsyiqdetwzlvcy-webfont.eot');
+	src: url('css/fonts/phjrerxgbbxyevsyiqdetwzlvcy-webfont.eot?#iefix') format('embedded-opentype'),
+		 url('css/fonts/phjrerxgbbxyevsyiqdetwzlvcy-webfont.woff') format('woff'),
+		 url('css/fonts/phjrerxgbbxyevsyiqdetwzlvcy-webfont.ttf') format('truetype'),
+		 url('css/fonts/phjrerxgbbxyevsyiqdetwzlvcy-webfont.svg#phjrerxgbbxyevsyiqdetwzlvcyRg') format('svg');
+	font-weight:400;
+	font-style:normal
+	} -->
+		html{
+	font-family:"walkway_semiboldregular";
+	margin:0;
+	padding:0;
+	}
+	body,div,p,ul,li,span{
+	margin:0;
+	padding:0;
+	}
+	#loading{
+		display: block;
+		position: absolute;
+		width:100%;
+		height:100%;
+		top: 0;
+		background-color:#ffffff;
+		z-index: 200;
+		-webkit-transition: height 0.7s ease-in-out,opacity 1.7s ease-out;
+		-moz-transition: height 0.7s ease-in-out,opacity 1.7s ease-out;
+		-o-transition: height 0.7s ease-in-out,opacity 1.7s ease-out;
+		transition: height 0.7s ease-in-out,opacity 1.7s ease-out;
+		overflow:hidden;
+	}
+	#loading #logo{
+		position: absolute;	
+		color:#ffffff;
+		top:25%;
+		width:100%;
+		text-align: center;	
+		z-index:220;
+		opacity:0;
+		-webkit-transition: opacity 3.5s ease-out 0.3s,color 2.5s ease-out;
+		-moz-transition: opacity 3.5s ease-out 0.3s,2.5s ease-out;
+		-o-transition: opacity 3.5s ease-out 0.3s,2.5s ease-out;
+		transition: opacity 3.5s ease-out 0.3s,2.5s ease-out;
+	}
+	#loading.loading #logo{
+	  color:#CCCCCC;
+	  opacity:1;
+	}
+	#loading.loaded{
+		opacity:0;
+		color:#ffffff;
+	}
+	#loading.loaded #logo{
+	  color:#ffffff;
+	}
+	#loading #logo>p:first-child{	
+	font-size: 1500%;
+	line-height:1;
+	}
+	#loading  #logo>p:nth-child(2){
+	font-family:"segoe_printregular";
+	font-size: 150%;
+	-webkit-transition: opacity 0.6s ease-out;
+	-moz-transition: opacity 0.6s ease-out;
+	-o-transition: opacity 0.6s ease-out;
+	transition: opacity 0.6s ease-out;
+	}
+	#loading  #logo>p:nth-child(2) > span{
+		display:inline-block;
+		transform: translate3d(0px, 35px,0px);
+		-webkit-transform: translate3d(0px, 35px,0px);
+		-moz-transform: translate3d(0px, 35px,0px);
+		-o-transform: translate3d(0px, 35px,0px);
+		-ms-transform: translate3d(0px, 35px,0px);
+		opacity:0;
+	}
+	#loading  #logo>p:nth-child(2) > span:nth-child(1){
+		-webkit-animation: slideIn 2s 1 forwards 1s;
+		-moz-animation: slideIn 2s 1 forwards 1s; 
+		-o-animation: slideIn 2s 1 forwards 1s;
+		animation: slideIn 2s 1 forwards 1s;
+	}
+	#loading  #logo>p:nth-child(2) > span:nth-child(2){
+		-webkit-animation: slideIn 2s 1 forwards 1.5s;
+		-moz-animation: slideIn 2s 1 forwards 1.5s; 
+		-o-animation: slideIn 2s 1 forwards 1.5s;
+		animation: slideIn 2s 1 forwards 1.5s;
+	}
+	#loading  #logo>p:nth-child(2) > span:nth-child(3){
+		-webkit-animation: slideIn 2s 1 forwards 2s;
+		-moz-animation: slideIn 2s 1 forwards 2s; 
+		-o-animation: slideIn 2s 1 forwards 2s;
+		animation: slideIn 2s 1 forwards 2s;
+	}	
+	@-webkit-keyframes slideIn{
+		0% {
+			transform: translate3d(0px, 35px,0px);
+			-webkit-transform: translate3d(0px, 35px,0px);
+			-moz-transform: translate3d(0px, 35px,0px);
+			-o-transform: translate3d(0px, 35px,0px);
+			-ms-transform: translate3d(0px, 35px,0px);
+			opacity:0;
+			animation-timing-function: ease-in;
+		}  
+		30% {
+			-webkit-transform: translate3d(0px, 0px,0px);
+			-moz-transform: translate3d(0px, 0px,0px);
+			-o-transform: translate3d(0px, 0px,0px);
+			-ms-transform: translate3d(0px, 0px,0px);
+			transform: translate3d(0px, 0px,0px);
+			opacity:1; 	
+		}
+		70% {
+			-webkit-transform: translate3d(0px, 0px,0px);
+			-moz-transform: translate3d(0px, 0px,0px);
+			-o-transform: translate3d(0px, 0px,0px);
+			-ms-transform: translate3d(0px, 0px,0px);
+			transform: translate3d(0px, 0px,0px);
+			opacity:1; 
+			animation-timing-function: ease-in;			
+		}
+		100% {
+			-webkit-transform: translate3d(0px, -35px,0px);
+			-moz-transform: translate3d(0px, -35,0px);
+			-o-transform: translate3d(0px, -35,0px);
+			-ms-transform: translate3d(0px, -35,0px);
+			transform: translate3d(0px, -35,0px);
+			opacity:0;       
+		}
+	}	
+	#loading  #logo>p:nth-child(3){
+	font-family:"segoe_printregular";
+	font-size: 200%;
+	-webkit-animation: slideUp 1s 1 both 3.5s;
+	-moz-animation: slideUp 1s 1 both 3.5s; 
+	-o-animation: slideUp 1s 1 both 3.5s;
+	animation: slideUp 1s 1 both 3.5s;
+	}
+	@-webkit-keyframes slideUp{
+		0% {
+			transform: translate3d(0px, 0px,0px);
+			-webkit-transform: translate3d(0px, 0px,0px);
+			-moz-transform: translate3d(0px, 0px,0px);
+			-o-transform: translate3d(0px, 0px,0px);
+			-ms-transform: translate3d(0px, 0px,0px);
+			opacity:0;
+			animation-timing-function: ease-in;
+		}  
+		80% {
+			-webkit-transform: translate3d(0px, -50px,0px);
+			-moz-transform: translate3d(0px,  -50px,0px);
+			-o-transform: translate3d(0px,  -50px,0px);
+			-ms-transform: translate3d(0px,  -50px,0px);
+			transform: translate3d(0px, -50px,0px);
+			animation-timing-function: ease-in; 	
+		}
+		100% {
+			-webkit-transform: translate3d(0px, -50px,0px);
+			-moz-transform: translate3d(0px,  -50px,0px);
+			-o-transform: translate3d(0px,  -50px,0px);
+			-ms-transform: translate3d(0px,  -50px,0px);
+			transform: translate3d(0px, -50px,0px);
+			opacity:1.0; 	
+		}	
+	}
+	#loading  #logo>p:nth-child(4){
+	opacity:0;
+	-webkit-transform: translate3d(0px, -30px,0px);
+	-moz-transform: translate3d(0px,  -30px,0px);
+	-o-transform: translate3d(0px,  -30px,0px);
+	-ms-transform: translate3d(0px,  -30px,0px);
+	transform: translate3d(0px, -30px,0px);
+	-webkit-transition: opacity 0.6s ease-out 4s;
+	-moz-transition: opacity 0.6s ease-out 4s;
+	-o-transition: opacity 0.6s ease-out 4s;
+	transition: opacity 0.6s ease-out 4s;
+	}
+	#loading.loading  #logo>p:nth-child(4){
+		opacity:0.3;
+	}	
+	</style>
+	</head>	
+	<body style="background-color:#ffffff">
+		<div id="loading" class="">
+			<div id="logo">
+					<p>Mia</p>
+					<p><span>. Fashion&nbsp;</span><span> . Pre Wedding .</span><span>&nbsp;Portrait . </span></p>
+					<p>photography</p>
+					<p><img src="./img/icons/in_black.png" alt="logo"></p>
+			</div>
+		</div>
+		<div class="container" style="visibility:hidden;">
+		</div>
+	</body>
+	
+	<script src="js/jquery-2.1.1.min.js"></script>
+	<script>
+		var landingHtml='';
+		jQuery(window).load(function(){
+			console.log("loading");
+			$("#loading").addClass("loading");
+			var landingHtml=loadLanding();	
+		});
+		function loadLanding(){
+			console.log("loadLanding");
+			jQuery.ajax({
+				url: "landing.html",
+				context: document.body
+			}).done(function(data) {
+				var landing=jQuery('.container').html(data).css("visibility","hidden");
+				window.setTimeout(function(){
+					jQuery('.container').css("visibility","visible");
+				},4000);
+				window.setTimeout(function(){
+					$("#loading").removeClass("loading").addClass("loaded");
+					window.setTimeout(function(){
+					$("#loading").hide();
+					//jQuery('.container').css("visibility","visible");
+					},700);
+				},5000);
+			});
+		}
+	</script>
+</html>
